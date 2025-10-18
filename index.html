@@ -55,6 +55,41 @@
       transform: translateY(-5px);
       box-shadow: 0 0 20px rgba(255,255,255,0.2);
     }
+    .form-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .form-overlay {
+      width: 90%;
+      max-width: 640px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .form-overlay:hover {
+      background: rgba(255, 255, 255, 0.12);
+      transform: scale(1.01);
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+    }
+    
+    iframe {
+      width: 100%;
+      height: 1288px;
+      border: none;
+      border-radius: 12px;
+      background: transparent;
+    }
+
     .cta {
       text-align: center;
       padding: 80px 20px;
@@ -115,6 +150,20 @@
   <section class="cta">
     <h2>Early Access · Join the Waitlist</h2>
     <p>Fill out the form below to receive an invite to the beta test as soon as possible. 🎯</p>
+
+    <div class="form-container">
+      <div class="form-overlay">
+        <iframe 
+          src="https://docs.google.com/forms/d/e/1FAIpQLSeB_9QqxMr3dE5xwKEOtcRsbMs20L5gK4Il5fKXJCRhqxxufQ/viewform?embedded=true"
+          allowtransparency="true"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0">
+          Loading…
+        </iframe>
+      </div>
+    </div>
+
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeB_9QqxMr3dE5xwKEOtcRsbMs20L5gK4Il5fKXJCRhqxxufQ/viewform?embedded=true" width="640" height="889" frameborder="0" marginheight="0" marginwidth="0">正在加载…</iframe>
   </section>
 
