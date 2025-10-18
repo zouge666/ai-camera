@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Camera Landing Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
+      color: white;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 80px 20px 40px;
+    }
+    h1 {
+      font-size: 3em;
+      font-weight: 700;
+      background: linear-gradient(to right, #60a5fa, #38bdf8, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 3s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #60a5fa; }
+      to { text-shadow: 0 0 30px #a78bfa; }
+    }
+    p {
+      font-size: 1.2em;
+      color: #cbd5e1;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 60px 20px;
+      gap: 30px;
+    }
+    .feature {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 16px;
+      width: 280px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(255,255,255,0.05);
+      transition: all 0.3s ease;
+    }
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+    .cta {
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .cta button {
+      padding: 16px 40px;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 50px;
+      background: linear-gradient(to right, #38bdf8, #818cf8, #a78bfa);
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(99,102,241,0.4);
+    }
+    .cta button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(99,102,241,0.6);
+    }
+    iframe {
+      width: 100%;
+      max-width: 640px;
+      height: 700px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(59,130,246,0.2);
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #94a3b8;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>AI Camera</h1>
+    <p>Redefining Your Lens World with Artificial Intelligence</p>
+  </header>
+
+  <section class="features">
+    <div class="feature">
+      <h3>🤖 Real-time Intelligent Recognition</h3>
+      <p>Deep learning-based visual recognition systems make every frame smarter.</p>
+    </div>
+    <div class="feature">
+      <h3>🌈 Scene Optimization</h3>
+      <p>Automatically adjusts light, color, and composition to ensure your photos are always at their best.</p>
+    </div>
+    <div class="feature">
+      <h3>📷 AI Beautification Engine</h3>
+      <p>Smart Portrait Enhancement and Style Transfer: Effortlessly Achieve Artistic Photography.</p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Early Access · Join the Waitlist</h2>
+    <p>Fill out the form below to receive an invite to the beta test as soon as possible. 🎯</p>
+
+    <!-- ⬇️ 在这里替换为你的 Google Forms 链接 -->
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeB_9QqxMr3dE5xwKEOtcRsbMs20L5gK4Il5fKXJCRhqxxufQ/viewform?embedded=true" width="640" height="689" frameborder="0" marginheight="0" marginwidth="0">正在加载…</iframe>
+  </section>
+
+  <footer>
+    © 2025 AI Camera Project | Designed for GitHub Pages
+  </footer>
+
+</body>
+</html>
