@@ -1,173 +1,1222 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Camera Landing Page</title>
+  <title>Lumea AI - Get Instagram-ready photos in just 15 seconds</title>
   <style>
     * {
       box-sizing: border-box;
     }
+    
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
-      color: white;
-      overflow-x: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+      background: #ffffff;
+      color: #111827;
+      line-height: 1.6;
     }
-    header {
-      text-align: center;
-      padding: 80px 20px 40px;
+    
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(8px);
+      z-index: 50;
+      border-bottom: 1px solid #e5e7eb;
     }
-    h1 {
-      font-size: 3em;
-      font-weight: 700;
-      background: linear-gradient(to right, #60a5fa, #38bdf8, #a78bfa);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: glow 3s ease-in-out infinite alternate;
+    
+    .nav-container {
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
     }
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #60a5fa; }
-      to { text-shadow: 0 0 30px #a78bfa; }
-    }
-    p {
-      font-size: 1.2em;
-      color: #cbd5e1;
-    }
-    .features {
+    
+    .nav-content {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 60px 20px;
-      gap: 30px;
-    }
-    .feature {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 30px;
-      border-radius: 16px;
-      width: 280px;
-      text-align: center;
-      box-shadow: 0 0 15px rgba(255,255,255,0.05);
-      transition: all 0.3s ease;
-    }
-    .feature:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 20px rgba(255,255,255,0.2);
-    }
-    .form-container {
-      display: flex;
-      justify-content: center;
       align-items: center;
-      padding: 60px 20px;
-      position: relative;
-      z-index: 2;
+      justify-content: space-between;
+      height: 5rem;
     }
     
-    .form-overlay {
-      width: 90%;
-      max-width: 640px;
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 16px;
-      padding: 20px;
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
     
-    .form-overlay:hover {
-      background: rgba(255, 255, 255, 0.12);
-      transform: scale(1.01);
-      box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+    .logo svg {
+      width: 2rem;
+      height: 2rem;
     }
     
-    iframe {
+    .logo-text {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #111827;
+    }
+    
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 2rem;
+    }
+    
+    .nav-links a {
+      color: #6b7280;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    
+    .nav-links a:hover {
+      color: #111827;
+    }
+    
+    .nav-cta {
+      padding: 0.5rem 1.25rem;
+      background: #111827;
+      color: white;
+      text-decoration: none;
+      border-radius: 0.75rem;
+      font-weight: 500;
+      transition: background-color 0.2s;
+    }
+    
+    .nav-cta:hover {
+      background: #374151;
+    }
+    
+    @media (min-width: 768px) {
+      .nav-links {
+        display: flex;
+      }
+    }
+    
+    /* Hero Section */
+    .hero {
+      padding-top: 10rem;
+      padding-bottom: 8rem;
+      background: #f9fafb;
+    }
+    
+    .hero-container {
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    .hero-content {
+      text-align: center;
+    }
+    
+    .hero h1 {
+      font-size: 3.75rem;
+      font-weight: 700;
+      color: #111827;
+      line-height: 1.1;
+      margin-bottom: 2rem;
+      letter-spacing: -0.025em;
+    }
+    
+    .hero p {
+      font-size: 1.25rem;
+      color: #6b7280;
+      line-height: 1.6;
+      margin-bottom: 3rem;
+      max-width: 48rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #111827;
+      color: white;
+      text-decoration: none;
+      border-radius: 0.75rem;
+      font-weight: 500;
+      font-size: 1.125rem;
+      transition: background-color 0.2s;
+      margin-bottom: 4rem;
+    }
+    
+    .hero-cta:hover {
+      background: #374151;
+    }
+    
+    .hero .early-access-banner {
+      max-width: 48rem;
+      margin: 0 auto 4rem;
+      background: linear-gradient(135deg, #111827 0%, #374151 100%);
+      color: white;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .hero .early-access-banner p:first-child {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: white;
+    }
+    
+    .hero .early-access-banner p:last-child {
+      color: #d1d5db;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    
+    .hero .early-access-banner .hero-cta {
+      margin-bottom: 0;
+      background: white;
+      color: #111827;
+      font-weight: 800;
+    }
+    
+    .hero .early-access-banner .hero-cta:hover {
+      background: #f3f4f6;
+      transform: translateY(-1px);
+    }
+    
+    .hero-image {
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+    }
+    
+    .hero-image img {
+      margin: 0 auto;
+      border-radius: 1.5rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      max-width: 24rem;
       width: 100%;
-      height: 1288px;
+      height: auto;
+    }
+    
+    @media (min-width: 640px) {
+      .hero h1 {
+        font-size: 4.5rem;
+      }
+      .hero p {
+        font-size: 1.5rem;
+      }
+    }
+    
+    /* Screenshot Gallery */
+    .gallery {
+      padding: 6rem 0;
+      background: white;
+    }
+    
+    .gallery-container {
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    .gallery-header {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+    
+    .gallery h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 1rem;
+    }
+    
+    .gallery p {
+      font-size: 1.25rem;
+      color: #6b7280;
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    
+    .gallery-item {
+      background: #f9fafb;
+      border-radius: 1.5rem;
+      overflow: hidden;
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+    }
+    
+    @media (min-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    /* How It Works */
+    .how-it-works {
+      padding: 6rem 0;
+      background: white;
+    }
+    
+    .how-it-works-container {
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    .how-it-works-header {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+    
+    .how-it-works h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 1rem;
+    }
+    
+    .how-it-works p {
+      font-size: 1.25rem;
+      color: #6b7280;
+    }
+    
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4rem;
+    }
+    
+    .step {
+      text-align: center;
+    }
+    
+    .step-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 4rem;
+      height: 4rem;
+      background: #111827;
+      border-radius: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .step-icon svg {
+      width: 2rem;
+      height: 2rem;
+      color: white;
+    }
+    
+    .step h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 1rem;
+    }
+    
+    .step p {
+      color: #6b7280;
+      line-height: 1.6;
+      font-size: 1.125rem;
+    }
+    
+    @media (min-width: 768px) {
+      .steps-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    /* Pricing Section */
+    .pricing {
+      padding: 6rem 0;
+      background: #f9fafb;
+    }
+    
+    .pricing-container {
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    .pricing-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .pricing h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 1rem;
+    }
+    
+    .pricing p {
+      font-size: 1.25rem;
+      color: #6b7280;
+    }
+    
+    .early-access-banner {
+      max-width: 48rem;
+      margin: 0 auto 3rem;
+      background: #111827;
+      color: white;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    
+    .early-access-banner p:first-child {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: white;
+    }
+    
+    .early-access-banner p:last-child {
+      color: #d1d5db;
+    }
+    
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 64rem;
+      margin: 0 auto;
+    }
+    
+    .pricing-card {
+      background: white;
+      border: 2px solid #e5e7eb;
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+    }
+    
+    .pricing-card.featured {
+      background: #111827;
+      color: white;
+      transform: scale(1.05);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+    
+    .pricing-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .pricing-card.featured h3 {
+      color: white;
+    }
+    
+    .pricing-card .price {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+    
+    .pricing-card .price-period {
+      color: #6b7280;
+      font-size: 1.125rem;
+    }
+    
+    .pricing-card.featured .price-period {
+      color: #9ca3af;
+    }
+    
+    .pricing-card .price-note {
+      color: #9ca3af;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
+    
+    .pricing-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2.5rem 0;
+    }
+    
+    .pricing-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    
+    .pricing-features svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      flex-shrink: 0;
+      margin-top: 0.125rem;
+    }
+    
+    .pricing-card .pricing-features svg {
+      color: #111827;
+    }
+    
+    .pricing-card.featured .pricing-features svg {
+      color: white;
+    }
+    
+    .pricing-card .pricing-features span {
+      color: #374151;
+    }
+    
+    .pricing-card.featured .pricing-features span {
+      color: white;
+    }
+    
+    .pricing-cta {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 0.75rem 1.5rem;
+      background: #111827;
+      color: white;
+      text-decoration: none;
+      border-radius: 0.75rem;
+      font-weight: 500;
+      transition: background-color 0.2s;
+    }
+    
+    .pricing-cta:hover {
+      background: #374151;
+    }
+    
+    .pricing-card.featured .pricing-cta {
+      background: white;
+      color: #111827;
+    }
+    
+    .pricing-card.featured .pricing-cta:hover {
+      background: #f3f4f6;
+    }
+    
+    .pricing-overlay {
+      position: relative;
+    }
+    
+    .pricing-overlay::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(2px);
+      border-radius: 1.5rem;
+      z-index: 1;
+    }
+    
+    .pricing-overlay .pricing-grid {
+      position: relative;
+      z-index: 0;
+      filter: grayscale(0.3);
+      opacity: 0.7;
+    }
+    
+    .pricing-launch-note {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #111827;
+      color: white;
+      padding: 1.5rem 2rem;
+      border-radius: 1rem;
+      text-align: center;
+      z-index: 2;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      max-width: 24rem;
+    }
+    
+    .pricing-launch-note h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: white;
+    }
+    
+    .pricing-launch-note p {
+      color: #d1d5db;
+      font-size: 0.875rem;
+      margin: 0;
+    }
+    
+    .save-badge {
+      background: white;
+      color: #111827;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+    }
+    
+    @media (min-width: 768px) {
+      .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    /* Download CTA */
+    .download-cta {
+      padding: 6rem 0;
+      background: white;
+    }
+    
+    .download-cta-container {
+      max-width: 64rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+    
+    .download-cta h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 1.5rem;
+    }
+    
+    .download-cta p {
+      font-size: 1.25rem;
+      color: #6b7280;
+      margin-bottom: 3rem;
+      line-height: 1.6;
+    }
+    
+    .download-cta .cta-button {
+      display: inline-flex;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #111827;
+      color: white;
+      text-decoration: none;
+      border-radius: 9999px;
+      font-weight: 500;
+      font-size: 1.125rem;
+      transition: background-color 0.2s;
+      margin-bottom: 2rem;
+    }
+    
+    .download-cta .cta-button:hover {
+      background: #374151;
+    }
+    
+    .download-cta .cta-note {
+      color: #6b7280;
+      font-size: 0.875rem;
+    }
+    
+    /* Contact Section */
+    .contact {
+      padding: 6rem 0;
+      background: #f9fafb;
+    }
+    
+    .contact-container {
+      max-width: 48rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    .contact-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .contact h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 1rem;
+    }
+    
+    .contact p {
+      font-size: 1.25rem;
+      color: #6b7280;
+    }
+    
+    .contact-form {
+      display: grid;
+      gap: 1.5rem;
+    }
+    
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .form-group label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 0.5rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 1rem;
+      font-size: 1rem;
+      transition: all 0.2s;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      ring: 2px solid #111827;
+      border-color: transparent;
+    }
+    
+    .form-group textarea {
+      resize: vertical;
+      min-height: 8rem;
+    }
+    
+    .form-submit {
+      width: 100%;
+      padding: 1rem 1.5rem;
+      background: #111827;
+      color: white;
       border: none;
-      border-radius: 12px;
-      background: transparent;
+      border-radius: 9999px;
+      font-weight: 500;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    .form-submit:hover {
+      background: #374151;
+    }
+    
+    .contact-info {
+      margin-top: 4rem;
+      text-align: center;
+    }
+    
+    .contact-info p {
+      color: #6b7280;
+      margin-bottom: 1rem;
+    }
+    
+    .contact-info a {
+      color: #111827;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.125rem;
+    }
+    
+    .contact-info a:hover {
+      color: #6b7280;
+    }
+    
+     /* Form Container Styles */
+     .form-container {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       padding: 40px 20px;
+       position: relative;
+       z-index: 2;
+     }
+     
+     .form-overlay {
+       width: 100%;
+       max-width: 640px;
+       background: rgba(255, 255, 255, 0.95);
+       border: 1px solid #e5e7eb;
+       border-radius: 16px;
+       padding: 20px;
+       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+       transition: all 0.3s ease;
+     }
+     
+     .form-overlay:hover {
+       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+     }
+     
+     .form-overlay iframe {
+       width: 100%;
+       height: 700px;
+       border: none;
+       border-radius: 8px;
+       background: transparent;
+     }
+     
+     @media (max-width: 768px) {
+       .form-container {
+         padding: 20px 10px;
+       }
+       
+       .form-overlay {
+         padding: 15px;
+       }
+       
+       .form-overlay iframe {
+         height: 600px;
+       }
+     }
+    
+    @media (min-width: 640px) {
+      .form-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    /* Footer */
+    footer {
+      background: white;
+      padding: 4rem 0;
+    }
+    
+    .footer-container {
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    .footer-content {
+      /* display: grid; */
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-brand svg {
+      width: 2rem;
+      height: 2rem;
+    }
+    
+    .footer-brand-text {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #111827;
+    }
+    
+    .footer-description {
+      color: #6b7280;
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+    
+    .footer-section h4 {
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+    
+    .footer-links a {
+      color: #6b7280;
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+    
+    .footer-links a:hover {
+      color: #111827;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 0.75rem;
+    }
+    
+    .social-link {
+      width: 2.5rem;
+      height: 2.5rem;
+      background: #e5e7eb;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: background-color 0.2s;
+    }
+    
+    .social-link:hover {
+      background: #d1d5db;
+    }
+    
+    .social-link svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      color: #111827;
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid #e5e7eb;
+      padding-top: 2rem;
+      text-align: center;
+      color: #6b7280;
+      font-size: 0.875rem;
+    }
+    
+    @media (min-width: 768px) {
+      .footer-content {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
 
-    .cta {
-      text-align: center;
-      padding: 80px 20px;
-    }
-    .cta button {
-      padding: 16px 40px;
-      font-size: 1.1em;
-      border: none;
-      border-radius: 50px;
-      background: linear-gradient(to right, #38bdf8, #818cf8, #a78bfa);
+    #offer-text {
       color: white;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 15px rgba(99,102,241,0.4);
-    }
-    .cta button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(99,102,241,0.6);
-    }
-    iframe {
-      width: 100%;
-      max-width: 640px;
-      height: 700px;
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 0 25px rgba(59,130,246,0.2);
-    }
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #94a3b8;
-      font-size: 0.9em;
     }
   </style>
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init gi Cr Or pi Tr Rr capture ji calculateEventProperties Ar register register_once register_for_session unregister unregister_for_session Nr getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Dr Mr createPersonProfile Lr kr Ur opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Fr debug L jr getPageViewId captureTraceFeedback captureTraceMetric Sr".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_JXCTMG0qwKZf95dzmbGMy36Z3g4WR2twzCXSortM54G', {
+        api_host: 'https://eu.i.posthog.com',
+        defaults: '2025-05-24',
+        person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
+    })
+</script>
 </head>
 <body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="nav-content">
+        <!-- Logo -->
+        <div class="logo">
+          <?xml version="1.0"?><svg height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h48v48h-48z" fill="none"/><path d="M18.8 21l9.53-16.51c-1.39-.31-2.84-.49-4.33-.49-4.8 0-9.19 1.69-12.64 4.51l7.33 12.69.11-.2zm24.28-3c-1.84-5.85-6.3-10.52-11.99-12.68l-7.32 12.68h19.31zm.52 2h-14.98l.58 1 9.53 16.5c3.26-3.56 5.27-8.29 5.27-13.5 0-1.37-.14-2.71-.4-4zm-26.53 4l-7.8-13.5c-3.26 3.56-5.27 8.29-5.27 13.5 0 1.37.14 2.71.4 4h14.98l-2.31-4zm-12.15 6c1.84 5.85 6.3 10.52 11.99 12.68l7.32-12.68h-19.31zm22.54 0l-7.8 13.51c1.4.31 2.85.49 4.34.49 4.8 0 9.19-1.69 12.64-4.51l-7.33-12.69-1.85 3.2z"/></svg>
+          <span class="logo-text">Lumea AI</span>
+        </div>
 
-  <header>
-    <h1>AI Camera</h1>
-    <p>Redefining Your Lens World with Artificial Intelligence</p>
-  </header>
+        <div class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+          <!-- <a href="#contact">Contact</a> -->
+        </div>
 
-  <section class="features">
-    <div class="feature">
-      <h3>🤖 Real-time Intelligent Recognition</h3>
-      <p>Deep learning-based visual recognition systems make every frame smarter.</p>
+        <a href="#contact" class="nav-cta">Get Started</a>
+      </div>
     </div>
-    <div class="feature">
-      <h3>🌈 Scene Optimization</h3>
-      <p>Automatically adjusts light, color, and composition to ensure your photos are always at their best.</p>
-    </div>
-    <div class="feature">
-      <h3>📷 AI Beautification Engine</h3>
-      <p>Smart Portrait Enhancement and Style Transfer: Effortlessly Achieve Artistic Photography.</p>
-    </div>
-  </section>
+  </nav>
 
-  <section class="cta">
-    <h2>Early Access · Join the Waitlist</h2>
-    <p>Fill out the form below to receive an invite to the beta test as soon as possible. 🎯</p>
-
-    <div class="form-container">
-      <div class="form-overlay">
-        <iframe 
-          src="https://docs.google.com/forms/d/e/1FAIpQLSeB_9QqxMr3dE5xwKEOtcRsbMs20L5gK4Il5fKXJCRhqxxufQ/viewform?embedded=true"
-          allowtransparency="true"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0">
-          Loading…
-        </iframe>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1>Get Instagram-ready photos in 15 seconds</h1>
+        <p>Lumea learns from your favorite portraits and gives real-time camera guidance so every selfie and portrait matches your personal style.</p>
+        <div class="hero-image">
+          <img src="https://i.ibb.co/yFfCVD87/hero-screenshot.webp" alt="Lumea AI app screenshot" />
+        </div>
+        <div class="early-access-banner">
+          <p>🎉 Early Access Offer</p>
+          <p id="offer-text">Get 1 year of Lumea AI <span style="font-weight: bold; color: white;">free</span> (a $71 value) — available until <span style="font-weight: bold; color: white;">November 24.</span> </p>
+          <a href="#contact" class="hero-cta">Join Early Access</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer>
-    © 2025 AI Camera Project | Designed for GitHub Pages
-  </footer>
+  <!-- Screenshot Gallery -->
+  <!-- <section class="gallery">
+    <div class="gallery-container">
+      <div class="gallery-header">
+        <h2>See Lumea in Action</h2>
+        <p>Real-time guidance for social-ready results</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="/placeholder.svg?height=600&width=400" alt="Lumea AI camera interface" />
+        </div>
+        <div class="gallery-item">
+          <img src="/placeholder.svg?height=600&width=400" alt="AI learning from portraits" />
+        </div>
+        <div class="gallery-item">
+          <img src="/placeholder.svg?height=600&width=400" alt="Perfect portrait results" />
+        </div>
+      </div>
+    </div>
+  </section> -->
 
+  <!-- How It Works -->
+  <section id="features" class="how-it-works">
+    <div class="how-it-works-container">
+      <div class="how-it-works-header">
+        <h2>How Lumea Works</h2>
+        <p>Three simple steps to share-ready portraits</p>
+      </div>
+      <div class="steps-grid">
+        <!-- Step 1 -->
+        <div class="step">
+          <div class="step-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+              />
+            </svg>
+          </div>
+          <h3>Upload Your Best Portraits</h3>
+          <p>Lumea's AI analyzes your unique style preferences.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step">
+          <div class="step-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+              />
+            </svg>
+          </div>
+          <h3>Get Live Guidance</h3>
+          <p>Open your camera and receive real-time, personalized suggestions.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step">
+          <div class="step-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+              />
+            </svg>
+          </div>
+          <h3>Capture Perfection</h3>
+          <p>Every shot matches your personal aesthetic automatically.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="pricing">
+    <div class="pricing-container">
+      <div class="pricing-header">
+        <h2>Subscription Plans</h2>
+        <p>Choose the plan that works for you</p>
+      </div>
+
+      <!-- <div class="early-access-banner">
+        <p>🎉 Early Access Offer</p>
+        <p>First 50 users get <span style="font-weight: bold; color: white;">1 year free</span> access to Lumea AI!</p>
+      </div> -->
+
+      <div class="pricing-overlay">
+        <div class="pricing-launch-note">
+          <h3>Subscription plans launching soon</h3>
+          <p>Free Early Access until Nov 24</p>
+        </div>
+        <div class="pricing-grid">
+          <!-- Monthly Plan -->
+          <div class="pricing-card">
+            <h3>Monthly</h3>
+            <div class="price">$7.99<span class="price-period">/month</span></div>
+            <ul class="pricing-features">
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Unlimited guided photos</span>
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>AI-powered camera guidance</span>
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Personalized style learning</span>
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Priority support</span>
+              </li>
+            </ul>
+            <a href="#contact" class="pricing-cta">Get Started</a>
+          </div>
+
+          <!-- Yearly Plan (Featured) -->
+          <div class="pricing-card featured">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+              <h3>Yearly</h3>
+              <span class="save-badge">SAVE 25%</span>
+            </div>
+            <div class="price">$5.99<span class="price-period">/month</span></div>
+            <p class="price-note">Billed annually at $71.88</p>
+            <ul class="pricing-features">
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Unlimited guided photos</span>
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>AI-powered camera guidance</span>
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Personalized style learning</span>
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Priority support</span>
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Best value - save $24/year</span>
+              </li>
+            </ul>
+            <a href="#contact" class="pricing-cta">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download CTA Section -->
+  <section id="download" class="download-cta">
+    <div class="download-cta-container">
+      <h2>Ready to Transform Your Photos?</h2>
+      <p>Join early access to take stunning portraits with Lumea AI</p>
+      <a href="#contact" class="cta-button">Join Early Access</a>
+      <p class="cta-note">Available for iOS • No credit card required</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="contact-container">
+      <div class="contact-header">
+        <h2>Join Early Access</h2>
+        <p>We will get back to you as soon as possible.</p>
+      </div>
+
+      <div class="form-container">
+        <div class="form-overlay">
+          <iframe 
+            src="https://docs.google.com/forms/d/e/1FAIpQLSeB_9QqxMr3dE5xwKEOtcRsbMs20L5gK4Il5fKXJCRhqxxufQ/viewform?embedded=true"
+            allowtransparency="true"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0">
+            Loading…
+          </iframe>
+        </div>
+      </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-content">
+        <div>
+          <div class="footer-brand">
+            <?xml version="1.0"?><svg height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h48v48h-48z" fill="none"/><path d="M18.8 21l9.53-16.51c-1.39-.31-2.84-.49-4.33-.49-4.8 0-9.19 1.69-12.64 4.51l7.33 12.69.11-.2zm24.28-3c-1.84-5.85-6.3-10.52-11.99-12.68l-7.32 12.68h19.31zm.52 2h-14.98l.58 1 9.53 16.5c3.26-3.56 5.27-8.29 5.27-13.5 0-1.37-.14-2.71-.4-4zm-26.53 4l-7.8-13.5c-3.26 3.56-5.27 8.29-5.27 13.5 0 1.37.14 2.71.4 4h14.98l-2.31-4zm-12.15 6c1.84 5.85 6.3 10.52 11.99 12.68l7.32-12.68h-19.31zm22.54 0l-7.8 13.51c1.4.31 2.85.49 4.34.49 4.8 0 9.19-1.69 12.64-4.51l-7.33-12.69-1.85 3.2z"/></svg>
+            <span class="footer-brand-text">Lumea AI</span>
+          </div>
+          <p class="footer-description">Get Instagram-ready photos in 15 seconds.</p>
+        </div>
+
+        <!-- <div>
+          <h4>Product</h4>
+          <ul class="footer-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#download">Download</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="#">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#" class="social-link">
+              <svg fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
+            <a href="#" class="social-link">
+              <svg fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+              </svg>
+            </a>
+            <a href="#" class="social-link">
+              <svg fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42 2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z" />
+              </svg>
+            </a>
+          </div>
+        </div> -->
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Lumea AI. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
