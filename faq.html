@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lumea AI — FAQ</title>
+    <meta
+      name="description"
+      content="Answers to common questions about Lumea AI: how it works, Early Access, pricing, availability, and privacy."
+    />
+    <link rel="canonical" href="https://YOUR-DOMAIN.com/faq.html" />
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+          "Oxygen", "Ubuntu", "Cantarell", sans-serif;
+        background: #ffffff;
+        color: #111827;
+        line-height: 1.6;
+      }
+
+      /* Navigation (same look as index) */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(8px);
+        z-index: 50;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .nav-container {
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+      .nav-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 5rem;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+      }
+      .logo svg {
+        width: 2rem;
+        height: 2rem;
+      }
+      .logo-text {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #111827;
+      }
+      .nav-links {
+        display: none;
+        align-items: center;
+        gap: 2rem;
+      }
+      .nav-links a {
+        color: #6b7280;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: #111827;
+      }
+      .nav-links a.active {
+        color: #111827;
+        font-weight: 600;
+      }
+      .nav-cta {
+        padding: 0.5rem 1.25rem;
+        background: #111827;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 0.75rem;
+        font-weight: 500;
+        transition: background-color 0.2s;
+      }
+      .nav-cta:hover {
+        background: #374151;
+      }
+      @media (min-width: 768px) {
+        .nav-links {
+          display: flex;
+        }
+      }
+
+      /* Page header */
+      .page-hero {
+        padding-top: 10rem;
+        padding-bottom: 3rem;
+        background: #f9fafb;
+      }
+      .container {
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+      .page-hero h1 {
+        font-size: 3rem;
+        font-weight: 800;
+        margin: 0 0 0.75rem;
+        color: #111827;
+        letter-spacing: -0.02em;
+      }
+      .page-hero p {
+        color: #6b7280;
+        font-size: 1.125rem;
+        margin: 0;
+      }
+
+      /* FAQ section */
+      .faq {
+        padding: 3rem 0 6rem;
+        background: #fff;
+      }
+      .faq-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        max-width: 64rem;
+        margin: 2rem auto 0;
+      }
+      @media (min-width: 768px) {
+        .faq-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 1.25rem;
+        }
+      }
+      details {
+        background: #f9fafb;
+        border: 1px solid #e5e7eb;
+        border-radius: 1rem;
+        padding: 1rem 1.25rem;
+        transition: box-shadow 0.2s, border-color 0.2s;
+      }
+      details[open] {
+        box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.15);
+        border-color: #d1d5db;
+      }
+      summary {
+        cursor: pointer;
+        list-style: none;
+        font-weight: 700;
+        color: #111827;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+      summary::-webkit-details-marker {
+        display: none;
+      }
+      .q-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.75rem;
+        height: 1.75rem;
+        background: #111827;
+        border-radius: 0.5rem;
+        flex: 0 0 auto;
+      }
+      .q-icon svg {
+        width: 1rem;
+        height: 1rem;
+        color: #fff;
+      }
+      .answer {
+        color: #4b5563;
+        margin: 0.75rem 0 0;
+        font-size: 1rem;
+        line-height: 1.7;
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: #111827;
+        color: #fff;
+        border-radius: 9999px;
+        padding: 0.25rem 0.625rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+      }
+
+      /* Footer (same look as index) */
+      footer {
+        background: #fff;
+        padding: 4rem 0;
+        border-top: 1px solid #e5e7eb;
+      }
+      .footer-container {
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+      .footer-content {
+        gap: 3rem;
+        margin-bottom: 3rem;
+      }
+      .footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+      .footer-brand svg {
+        width: 2rem;
+        height: 2rem;
+      }
+      .footer-brand-text {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #111827;
+      }
+      .footer-description {
+        color: #6b7280;
+        font-size: 0.875rem;
+        line-height: 1.6;
+        text-wrap: balance;
+      }
+      .footer-bottom {
+        text-align: center;
+        color: #6b7280;
+        font-size: 0.875rem;
+      }
+    </style>
+
+    <!-- FAQPage structured data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Lumea AI?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Lumea AI learns from your favorite portraits and provides real-time camera guidance so every selfie and portrait matches your personal style."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Lumea learn my style?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You upload a few of your best portraits. Lumea analyzes lighting, angles and aesthetic preferences to personalize live guidance when you open the camera."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Lumea available now?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, you can join Early Access for iOS from the homepage contact form. Early Access is free until November 24."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What will the pricing be after Early Access?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Planned pricing is $7.99/month or $71.88/year (best value)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Lumea edit my photos automatically?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Lumea focuses on live camera guidance so you capture great portraits in the moment. It helps you frame, light and align shots to match your style."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which platforms are supported?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Early Access targets iOS. We’ll share updates about other platforms on the website."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I join Early Access?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Open the homepage and submit the embedded Google Form in the Contact section. We’ll follow up as soon as possible."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will my portraits be used for anything else?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Portraits are used to personalize your guidance experience. We’ll publish full privacy and data handling details before the subscription launch."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <!-- (Optional) same PostHog snippet as index for analytics -->
+    <script>
+      !(function (t, e) {
+        var o, n, p, r;
+        e.__SV ||
+          (window.posthog && window.posthog.__loaded) ||
+          ((window.posthog = e),
+          (e._i = []),
+          (e.init = function (i, s, a) {
+            function g(t, e) {
+              var o = e.split(".");
+              2 == o.length && ((t = t[o[0]]), (e = o[1])),
+                (t[e] = function () {
+                  t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+                });
+            }
+            ((p = t.createElement("script")).type = "text/javascript"),
+              (p.crossOrigin = "anonymous"),
+              (p.async = !0),
+              (p.src =
+                s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") +
+                "/static/array.js"),
+              (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(
+                p,
+                r
+              );
+            var u = e;
+            for (
+              void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
+                u.people = u.people || [],
+                u.toString = function (t) {
+                  var e = "posthog";
+                  return (
+                    "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e
+                  );
+                },
+                u.people.toString = function () {
+                  return u.toString(1) + ".people (stub)";
+                },
+                o =
+                  "init gi Cr Or pi Tr Rr capture ji calculateEventProperties Ar register register_once register_for_session unregister unregister_for_session Nr getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroups reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Dr Mr createPersonProfile Lr kr Ur opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Fr debug L jr getPageViewId captureTraceFeedback captureTraceMetric Sr".split(
+                    " "
+                  ),
+                n = 0;
+              n < o.length;
+              n++
+            )
+              g(u, o[n]);
+            e._i.push([i, s, a]);
+          }),
+          (e.__SV = 1));
+      })(document, window.posthog || []);
+      posthog.init("phc_JXCTMG0qwKZf95dzmbGMy36Z3g4WR2twzCXSortM54G", {
+        api_host: "https://eu.i.posthog.com",
+        defaults: "2025-05-24",
+        person_profiles: "identified_only",
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="nav-container">
+        <div class="nav-content">
+          <a class="logo" href="index.html" aria-label="Go to Lumea AI home">
+            <?xml version="1.0"?><svg
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0 0h48v48h-48z" fill="none" />
+              <path
+                d="M18.8 21l9.53-16.51c-1.39-.31-2.84-.49-4.33-.49-4.8 0-9.19 1.69-12.64 4.51l7.33 12.69.11-.2zm24.28-3c-1.84-5.85-6.3-10.52-11.99-12.68l-7.32 12.68h19.31zm.52 2h-14.98l.58 1 9.53 16.5c3.26-3.56 5.27-8.29 5.27-13.5 0-1.37-.14-2.71-.4-4zm-26.53 4l-7.8-13.5c-3.26 3.56-5.27 8.29-5.27 13.5 0 1.37.14 2.71.4 4h14.98l-2.31-4zm-12.15 6c1.84 5.85 6.3 10.52 11.99 12.68l7.32-12.68h-19.31zm22.54 0l-7.8 13.51c1.4.31 2.85.49 4.34.49 4.8 0 9.19-1.69 12.64-4.51l-7.33-12.69-1.85 3.2z"
+              />
+            </svg>
+            <span class="logo-text">Lumea AI</span>
+          </a>
+
+          <div class="nav-links">
+            <!-- On FAQ page, link back to anchors on index -->
+            <a href="index.html#features">Features</a>
+            <a href="index.html#pricing">Pricing</a>
+            <a class="active" href="faq.html">FAQ</a>
+          </div>
+
+          <a href="index.html#contact" class="nav-cta">Get Started</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page header -->
+    <header class="page-hero">
+      <div class="container">
+        <span class="badge">FAQ</span>
+        <h1>Frequently Asked Questions</h1>
+        <p>
+          Answers about Early Access, pricing, availability and how Lumea works.
+        </p>
+      </div>
+    </header>
+
+    <!-- FAQ -->
+    <section class="faq">
+      <div class="container">
+        <div class="faq-grid">
+          <details open>
+            <summary>
+              <span class="q-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 6v6m0 6h.01"
+                  />
+                </svg>
+              </span>
+              What is Lumea AI?
+            </summary>
+            <div class="answer">
+              Lumea AI learns from your favorite portraits and gives real-time
+              camera guidance so every selfie and portrait matches your personal
+              style.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="q-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 6v6m0 6h.01"
+                  />
+                </svg>
+              </span>
+              How does it learn my style?
+            </summary>
+            <div class="answer">
+              Upload a few of your best portraits. Lumea analyzes lighting,
+              angles and overall aesthetic preferences to personalize the
+              guidance you see when the camera opens.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="q-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 6v6m0 6h.01"
+                  />
+                </svg>
+              </span>
+              Does Lumea edit photos after I shoot?
+            </summary>
+            <div class="answer">
+              Lumea focuses on live, in-camera guidance—helping you frame, light
+              and align shots so the photo looks great <em>before</em> you press
+              the shutter.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="q-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 6v6m0 6h.01"
+                  />
+                </svg>
+              </span>
+              Is there an Early Access program?
+            </summary>
+            <div class="answer">
+              Yes. Early Access for iOS is currently open and
+              <strong>free until November 24</strong>. Use the Google Form on
+              the homepage to join.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="q-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 6v6m0 6h.01"
+                  />
+                </svg>
+              </span>
+              What will pricing be after Early Access?
+            </summary>
+            <div class="answer">
+              Planned pricing: <strong>$7.99/month</strong> or
+              <strong>$71.88/year</strong> (best value). Subscriptions launch
+              soon.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="q-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 6v6m0 6h.01"
+                  />
+                </svg>
+              </span>
+              Which platforms are supported?
+            </summary>
+            <div class="answer">
+              Early Access targets <strong>iOS</strong>. We’ll share updates on
+              other platforms on the site.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="q-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 6v6m0 6h.01"
+                  />
+                </svg>
+              </span>
+              How do I join Early Access?
+            </summary>
+            <div class="answer">
+              Go to the homepage and fill out the embedded Google Form in the
+              <em>Join Early Access</em> section. We’ll get back to you as soon
+              as possible.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="q-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 6v6m0 6h.01"
+                  />
+                </svg>
+              </span>
+              How are my portraits handled?
+            </summary>
+            <div class="answer">
+              Portraits are used to personalize your guidance experience. We’ll
+              publish full privacy and data handling details before the
+              subscription launch.
+            </div>
+          </details>
+        </div>
+
+        <div style="text-align: center; margin-top: 2.5rem">
+          <a href="index.html#contact" class="nav-cta">Join Early Access</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-content">
+          <div>
+            <div class="footer-brand">
+              <?xml version="1.0"?><svg
+                height="48"
+                viewBox="0 0 48 48"
+                width="48"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 0h48v48h-48z" fill="none" />
+                <path
+                  d="M18.8 21l9.53-16.51c-1.39-.31-2.84-.49-4.33-.49-4.8 0-9.19 1.69-12.64 4.51l7.33 12.69.11-.2zm24.28-3c-1.84-5.85-6.3-10.52-11.99-12.68l-7.32 12.68h19.31zm.52 2h-14.98l.58 1 9.53 16.5c3.26-3.56 5.27-8.29 5.27-13.5 0-1.37-.14-2.71-.4-4zm-26.53 4l-7.8-13.5c-3.26 3.56-5.27 8.29-5.27 13.5 0 1.37.14 2.71.4 4h14.98l-2.31-4zm-12.15 6c1.84 5.85 6.3 10.52 11.99 12.68l7.32-12.68h-19.31zm22.54 0l-7.8 13.51c1.4.31 2.85.49 4.34.49 4.8 0 9.19-1.69 12.64-4.51l-7.33-12.69-1.85 3.2z"
+                />
+              </svg>
+              <span class="footer-brand-text">Lumea AI</span>
+            </div>
+            <p class="footer-description">
+              Get Instagram-ready photos in 15 seconds.
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Lumea AI. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

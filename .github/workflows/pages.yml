@@ -16,7 +16,7 @@ jobs:
       - name: Prepare static files
         run: |
           mkdir -p out
-          cp -r index.html assets out/ 2>/dev/null || true
+          cp -r index.html assets css out/ 2>/dev/null || true
 
       - name: Deploy production (main -> gh-pages/)
         if: github.ref_name == 'main'
