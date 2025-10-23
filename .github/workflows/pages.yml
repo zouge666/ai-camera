@@ -1,0 +1,36 @@
+name: Deploy Pages (main & dev preview)
+
+on:
+  push:
+    branches: [main, development]
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Prepare static files
+        run: |
+          mkdir -p out
+          cp -r index.html assets out/ 2>/dev/null || true
+
+      - name: Deploy production (main -> gh-pages/)
+        if: github.ref_name == 'main'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: out
+          clean: true
+
+      - name: Deploy preview (development -> gh-pages/previews/development/)
+        if: github.ref_name == 'development'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: out
+          target-folder: previews/development
+          clean: false
