@@ -1,2 +1,2 @@
 # ai-camera
-ai camera  
+ai camera    
