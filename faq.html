@@ -8,235 +8,62 @@
       name="description"
       content="Answers to common questions about Lumea AI: how it works, Early Access, pricing, availability, and privacy."
     />
-    <link rel="canonical" href="https://YOUR-DOMAIN.com/faq.html" />
-
-    <style>
-      * {
-        box-sizing: border-box;
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#111827" />
+    <link
+      rel="canonical"
+      href="https://zouge666.github.io/ai-camera/faq.html"
+    />
+    <meta property="og:site_name" content="Lumea AI" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Lumea AI — Frequently Asked Questions" />
+    <meta
+      property="og:description"
+      content="Find answers about how Lumea AI works, Early Access, pricing, availability, and privacy."
+    />
+    <meta
+      property="og:url"
+      content="https://zouge666.github.io/ai-camera/faq.html"
+    />
+    <meta
+      property="og:image"
+      content="https://i.ibb.co/yFfCVD87/hero-screenshot.webp"
+    />
+    <meta property="og:image:alt" content="Lumea AI app screenshot" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Lumea AI — Frequently Asked Questions"
+    />
+    <meta
+      name="twitter:description"
+      content="Everything you need to know about Lumea AI’s features, pricing and availability."
+    />
+    <meta
+      name="twitter:image"
+      content="https://i.ibb.co/yFfCVD87/hero-screenshot.webp"
+    />
+    <link rel="stylesheet" href="css/faq-style.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://zouge666.github.io/ai-camera/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "FAQ",
+            "item": "https://zouge666.github.io/ai-camera/faq.html"
+          }
+        ]
       }
-      body {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-          "Oxygen", "Ubuntu", "Cantarell", sans-serif;
-        background: #ffffff;
-        color: #111827;
-        line-height: 1.6;
-      }
-
-      /* Navigation (same look as index) */
-      nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(8px);
-        z-index: 50;
-        border-bottom: 1px solid #e5e7eb;
-      }
-      .nav-container {
-        max-width: 80rem;
-        margin: 0 auto;
-        padding: 0 1.5rem;
-      }
-      .nav-content {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 5rem;
-      }
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        text-decoration: none;
-      }
-      .logo svg {
-        width: 2rem;
-        height: 2rem;
-      }
-      .logo-text {
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: #111827;
-      }
-      .nav-links {
-        display: none;
-        align-items: center;
-        gap: 2rem;
-      }
-      .nav-links a {
-        color: #6b7280;
-        text-decoration: none;
-        transition: color 0.2s;
-      }
-      .nav-links a:hover {
-        color: #111827;
-      }
-      .nav-links a.active {
-        color: #111827;
-        font-weight: 600;
-      }
-      .nav-cta {
-        padding: 0.5rem 1.25rem;
-        background: #111827;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 0.75rem;
-        font-weight: 500;
-        transition: background-color 0.2s;
-      }
-      .nav-cta:hover {
-        background: #374151;
-      }
-      @media (min-width: 768px) {
-        .nav-links {
-          display: flex;
-        }
-      }
-
-      /* Page header */
-      .page-hero {
-        padding-top: 10rem;
-        padding-bottom: 3rem;
-        background: #f9fafb;
-      }
-      .container {
-        max-width: 80rem;
-        margin: 0 auto;
-        padding: 0 1.5rem;
-      }
-      .page-hero h1 {
-        font-size: 3rem;
-        font-weight: 800;
-        margin: 0 0 0.75rem;
-        color: #111827;
-        letter-spacing: -0.02em;
-      }
-      .page-hero p {
-        color: #6b7280;
-        font-size: 1.125rem;
-        margin: 0;
-      }
-
-      /* FAQ section */
-      .faq {
-        padding: 3rem 0 6rem;
-        background: #fff;
-      }
-      .faq-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        max-width: 64rem;
-        margin: 2rem auto 0;
-      }
-      @media (min-width: 768px) {
-        .faq-grid {
-          grid-template-columns: 1fr 1fr;
-          gap: 1.25rem;
-        }
-      }
-      details {
-        background: #f9fafb;
-        border: 1px solid #e5e7eb;
-        border-radius: 1rem;
-        padding: 1rem 1.25rem;
-        transition: box-shadow 0.2s, border-color 0.2s;
-      }
-      details[open] {
-        box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.15);
-        border-color: #d1d5db;
-      }
-      summary {
-        cursor: pointer;
-        list-style: none;
-        font-weight: 700;
-        color: #111827;
-        display: flex;
-        align-items: flex-start;
-        gap: 0.75rem;
-      }
-      summary::-webkit-details-marker {
-        display: none;
-      }
-      .q-icon {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 1.75rem;
-        height: 1.75rem;
-        background: #111827;
-        border-radius: 0.5rem;
-        flex: 0 0 auto;
-      }
-      .q-icon svg {
-        width: 1rem;
-        height: 1rem;
-        color: #fff;
-      }
-      .answer {
-        color: #4b5563;
-        margin: 0.75rem 0 0;
-        font-size: 1rem;
-        line-height: 1.7;
-      }
-      .badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        background: #111827;
-        color: #fff;
-        border-radius: 9999px;
-        padding: 0.25rem 0.625rem;
-        font-size: 0.75rem;
-        font-weight: 700;
-      }
-
-      /* Footer (same look as index) */
-      footer {
-        background: #fff;
-        padding: 4rem 0;
-        border-top: 1px solid #e5e7eb;
-      }
-      .footer-container {
-        max-width: 80rem;
-        margin: 0 auto;
-        padding: 0 1.5rem;
-      }
-      .footer-content {
-        gap: 3rem;
-        margin-bottom: 3rem;
-      }
-      .footer-brand {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        margin-bottom: 1rem;
-      }
-      .footer-brand svg {
-        width: 2rem;
-        height: 2rem;
-      }
-      .footer-brand-text {
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: #111827;
-      }
-      .footer-description {
-        color: #6b7280;
-        font-size: 0.875rem;
-        line-height: 1.6;
-        text-wrap: balance;
-      }
-      .footer-bottom {
-        text-align: center;
-        color: #6b7280;
-        font-size: 0.875rem;
-      }
-    </style>
-
-    <!-- FAQPage structured data for SEO -->
+    </script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -309,8 +136,6 @@
         ]
       }
     </script>
-
-    <!-- (Optional) same PostHog snippet as index for analytics -->
     <script>
       !(function (t, e) {
         var o, n, p, r;
@@ -368,9 +193,9 @@
         person_profiles: "identified_only",
       });
     </script>
+    <script src="js/faq.js" defer></script>
   </head>
   <body>
-    <!-- Navigation -->
     <nav>
       <div class="nav-container">
         <div class="nav-content">
@@ -386,20 +211,39 @@
             </svg>
             <span class="logo-text">Lumea AI</span>
           </a>
-
           <div class="nav-links">
-            <!-- On FAQ page, link back to anchors on index -->
             <a href="index.html#features">Features</a>
             <a href="index.html#pricing">Pricing</a>
             <a class="active" href="faq.html">FAQ</a>
           </div>
-
+          <a href="index.html#contact" class="nav-cta">Get Started</a>
+          <button
+            class="menu-toggle"
+            aria-label="Open menu"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M4 6h16M4 12h16M4 18h16"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="mobile-menu">
+        <div class="mobile-menu-inner">
+          <a href="index.html#features">Features</a>
+          <a href="index.html#pricing">Pricing</a>
+          <a href="faq.html">FAQ</a>
           <a href="index.html#contact" class="nav-cta">Get Started</a>
         </div>
       </div>
     </nav>
 
-    <!-- Page header -->
     <header class="page-hero">
       <div class="container">
         <span class="badge">FAQ</span>
@@ -410,23 +254,20 @@
       </div>
     </header>
 
-    <!-- FAQ -->
     <section class="faq">
       <div class="container">
         <div class="faq-grid">
           <details open>
             <summary>
-              <span class="q-icon">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <span class="q-icon"
+                ><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
                     d="M12 6v6m0 6h.01"
-                  />
-                </svg>
-              </span>
-              What is Lumea AI?
+                  /></svg></span
+              >What is Lumea AI?
             </summary>
             <div class="answer">
               Lumea AI learns from your favorite portraits and gives real-time
@@ -434,20 +275,17 @@
               style.
             </div>
           </details>
-
           <details>
             <summary>
-              <span class="q-icon">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <span class="q-icon"
+                ><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
                     d="M12 6v6m0 6h.01"
-                  />
-                </svg>
-              </span>
-              How does it learn my style?
+                  /></svg></span
+              >How does it learn my style?
             </summary>
             <div class="answer">
               Upload a few of your best portraits. Lumea analyzes lighting,
@@ -455,20 +293,17 @@
               guidance you see when the camera opens.
             </div>
           </details>
-
           <details>
             <summary>
-              <span class="q-icon">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <span class="q-icon"
+                ><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
                     d="M12 6v6m0 6h.01"
-                  />
-                </svg>
-              </span>
-              Does Lumea edit photos after I shoot?
+                  /></svg></span
+              >Does Lumea edit photos after I shoot?
             </summary>
             <div class="answer">
               Lumea focuses on live, in-camera guidance—helping you frame, light
@@ -476,20 +311,17 @@
               the shutter.
             </div>
           </details>
-
           <details>
             <summary>
-              <span class="q-icon">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <span class="q-icon"
+                ><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
                     d="M12 6v6m0 6h.01"
-                  />
-                </svg>
-              </span>
-              Is there an Early Access program?
+                  /></svg></span
+              >Is there an Early Access program?
             </summary>
             <div class="answer">
               Yes. Early Access for iOS is currently open and
@@ -497,20 +329,17 @@
               the homepage to join.
             </div>
           </details>
-
           <details>
             <summary>
-              <span class="q-icon">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <span class="q-icon"
+                ><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
                     d="M12 6v6m0 6h.01"
-                  />
-                </svg>
-              </span>
-              What will pricing be after Early Access?
+                  /></svg></span
+              >What will pricing be after Early Access?
             </summary>
             <div class="answer">
               Planned pricing: <strong>$7.99/month</strong> or
@@ -518,40 +347,34 @@
               soon.
             </div>
           </details>
-
           <details>
             <summary>
-              <span class="q-icon">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <span class="q-icon"
+                ><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
                     d="M12 6v6m0 6h.01"
-                  />
-                </svg>
-              </span>
-              Which platforms are supported?
+                  /></svg></span
+              >Which platforms are supported?
             </summary>
             <div class="answer">
               Early Access targets <strong>iOS</strong>. We’ll share updates on
               other platforms on the site.
             </div>
           </details>
-
           <details>
             <summary>
-              <span class="q-icon">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <span class="q-icon"
+                ><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
                     d="M12 6v6m0 6h.01"
-                  />
-                </svg>
-              </span>
-              How do I join Early Access?
+                  /></svg></span
+              >How do I join Early Access?
             </summary>
             <div class="answer">
               Go to the homepage and fill out the embedded Google Form in the
@@ -559,20 +382,17 @@
               as possible.
             </div>
           </details>
-
           <details>
             <summary>
-              <span class="q-icon">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <span class="q-icon"
+                ><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
                     d="M12 6v6m0 6h.01"
-                  />
-                </svg>
-              </span>
-              How are my portraits handled?
+                  /></svg></span
+              >How are my portraits handled?
             </summary>
             <div class="answer">
               Portraits are used to personalize your guidance experience. We’ll
@@ -581,14 +401,12 @@
             </div>
           </details>
         </div>
-
         <div style="text-align: center; margin-top: 2.5rem">
           <a href="index.html#contact" class="nav-cta">Join Early Access</a>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
     <footer>
       <div class="footer-container">
         <div class="footer-content">
